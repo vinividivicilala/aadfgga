@@ -1,0 +1,54 @@
+---
+title: 'Command line tips'
+date: June 14, 2022
+author: 'Beshoi Emad'
+excerpt: 'Command line tips'
+img: 'command-line-tips/bash.jpg'
+---
+
+import { Meta, ColorfulSpan, CoverImage, RegularImage } from 'components'
+import Link from 'next/link'
+
+<Meta title="Command Line - Beshoi Emad" description="Command line tips" />
+
+# Command line tips
+
+<CoverImage src="/imgs/posts/command-line-tips/bash.jpg" alt="bash-image" quality={30} />
+
+## Cool use cases for gh gists with alias
+
+Create gist
+
+```bash
+gh gist create example.txt
+```
+
+Every gist you created have an id, we need this id to edit gist. To grap the id or to view all gists you created just run this command,
+
+```bash
+gh gist list
+```
+
+Then you can edit gist
+
+```bash
+gh gist edit xxxxxxxxxxxxxxxxxxxxx
+```
+
+Quickly access info for example you can but you small code snippets, google fonts & libraries links to quickly copy and past them, save some nice color values, install instructions, etc. save whatever your need and quickly jump on it
+
+```bash
+alias links='gh gist edit xxxxxxxxxxxxxxxxxxxxx'
+```
+
+After run command it will open your gist in default editor for example in windows is notepad, but you can configure github-cli to use you [favorite editor](https://cli.github.com/manual/gh_config_set)
+
+For linux & mac you can add alias to ./.bashrc or ./zshrc for windows you can also add alias to ./.bashrc or ./zshrc if you installed [wsl](https://docs.microsoft.com/en-us/windows/wsl/install) or to git bash [How to add alias to git bash on windows](https://dev.to/mhjaafar/git-bash-on-windows-adding-a-permanent-alias-198g)
+
+## Bonus Tip:
+
+Make a prompt alias before permanently gone
+
+```bash
+rm -rf -i
+```

@@ -1,0 +1,133 @@
+---
+title: 'Package manger for windows'
+date: June 12, 2022
+author: 'Beshoi Emad'
+excerpt: 'Package managers are great because you able to install/uninstall/update from command line.'
+img: 'package-manger-for-windows/choco.jpg'
+tag: 'tools'
+---
+
+import { Meta, ColorfulSpan, CoverImage } from 'components'
+
+<Meta
+  title="Command Line - Beshoi Emad"
+  description="Package managers are great because you able to install/uninstall/update from command line."
+/>
+
+# Choco a package manger for windows!!
+
+<CoverImage src="/imgs/posts/package-manger-for-windows/choco.jpg" alt="choco-image" />
+
+## What's choco:
+
+Choco is shorthand for Chocolatey, if you use mac or linux you are familiar with package managers. Package managers are great because you able to install/uninstall/update from command line, install specific version if you are facing problem or you want to test something and the more important that you can update all software to get latest software features and security patches at once. choco is a free and opensource. let's take a brief look with most used commands.
+
+## [Install choco](https://docs.chocolatey.org/):
+
+Run PowerShell as system administrator any type this command
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+Close and reopen PowerShell as administrator, you are ready to use choco!
+
+## [Find packages](https://community.chocolatey.org/packages):
+
+you can find almost any software you could imagine and if you can't find the one that you need you can build a script then add it to the choco community packages.
+
+### Install
+
+```powershell
+choco install <Package name>
+```
+
+### Uninstall
+
+```powershell
+choco uninstall <Package name>
+```
+
+### Upgrade:
+
+```powershell
+choco upgrade <Package name>
+```
+
+### Flags:
+
+Some of choco flags you will needed:
+
+-y to confirm installation, -f to force installation if any failure happens
+
+```powershell
+ -y, --yes, --confirm
+     Confirm all prompts
+
+ -f, --force
+     Force - force the behavior. Do not use force during normal operation
+```
+
+[All list of commands and flags](https://docs.chocolatey.org/en-us/choco/commands/)
+
+### Params:
+
+You can find params in the package page, every package has a page with descriptions, parameters, versions if you need to customize it. params are different from package to onther.
+
+```powershell
+choco install <Package name> --params "/NoDesktopShortcut"
+```
+
+### Version History:
+
+Install specific version if you need that, Let's take an example of install Firefox browser
+
+```powershell
+choco install firefox --params "/NoDesktopShortcut" --version=98.0 -y
+```
+
+### Script:
+
+Install multiple packages with multiple params at the same time, for example we are going to install firefox, chrome, adobereader
+
+```powershell
+choco install firefox --params "/NoDesktopIcon /NoTaskbarShortcut" googlechrome adobereader -params "/DesktopIcon /UpdateMode:4" -y
+```
+
+### Search:
+
+Search for any app without leave your terminal
+
+```powershell
+choco search firefox
+```
+
+### List:
+
+View list of all your installed applications
+
+```powershell
+choco list --localonly
+```
+
+## Upgrades:
+
+Upgrade all packages at once in one command line
+
+```powershell
+choco upgrade all -y'
+```
+
+Vola!, all your apps updated at once without need to check every one in setting searching for update button
+
+### Bonus tip:
+
+update all packages automatically every certain time for example every week, day or at startup this could happen in many ways
+[Choco Upgrade All at Startup](https://community.chocolatey.org/packages/choco-upgrade-all-at-startup),
+[Choco Upgrade All at](https://community.chocolatey.org/packages/choco-upgrade-all-at),
+[PowerShell script](https://www.online-tech-tips.com/software-reviews/how-to-automatically-update-free-software-with-chocolatey/),
+[Task Scheduler](https://daniel.streefkerkonline.com/2016/02/23/create-a-scheduled-task-to-keep-all-chocolatey-packages-up-to-date/)
+
+Note:
+
+This is a brief intro with most used commands to start using and enjoy choco, but [choco](https://chocolatey.org/) is more than that it's a a software management solution have a tons of apps with tons of commands & options, it's free and open source. They also have a business plan but the free one are more than enough for regular user, so for sure you should take a look on [documentation](https://docs.chocolatey.org/) for more details or advanced use cases.

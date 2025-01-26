@@ -1,0 +1,88 @@
+---
+title: 'Create a website with zero media query'
+date: June 7, 2022
+author: 'Beshoi Emad'
+excerpt: 'How I created my website with zero media query using utopia && stitches'
+img: 'zero-media-query/mac.jpg'
+---
+
+import { Meta, ColorfulSpan, CoverImage, RegularImage } from 'components'
+
+<Meta
+  title="Create a website with zero media query - Beshoi Emad"
+  description="How I created my website with zero media query using utopia && stitches"
+/>
+
+# How I created my website with zero media query using Utopia & Stitches
+
+<CoverImage src="/imgs/posts/zero-media-query/mac.jpg" alt="mac-image" />
+
+How I managed to code my website without writing any media query. I used modern css
+syntax like css grid, flexbox, [fluid typography](https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l)
+to make my fonts fluid & smooth with out any need to change my font size for many
+break points and also [fluid spaces](https://utopia.fyi/space/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l)
+to set fluid spacing in paddings, margins, gaps. so until now I can't find any reason
+to write any media query because everything is fluid! 🚀. I didn't know about utopia
+or stitches until I watch these videos of [Kevin Powell](https://www.youtube.com/watch?v=VsNAuGkCpQU)
+and [Pedro Duarte](https://www.youtube.com/watch?v=Gw28VgyKGkw).
+
+## Advantages of using utopia
+
+1. fluid typography using [fluid type scale calculator](https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l)
+2. fluid space using [fluid space calculator](https://utopia.fyi/space/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l)
+3. zero media queries expect one for dark theme '(prefers-color-scheme: dark)' with another one for reduced motion '(prefers-reduced-motion: reduce)'.
+
+## Advantages of using stitches ( why I choose stitches )
+
+1. it's only around 6kb size
+2. be constant with your design system
+3. better developer experience with type checking, utils, auto complete
+4. great accessibility with a great eco system like radix component, colors
+
+### How I use them both to create my fluid & modern website
+
+First I select the desired font size at small breakpoint also for big breakpoint "choose the values that serve your needs"
+
+<RegularImage src="/imgs/posts/zero-media-query/font-scale.png" alt="font-scale-image" />
+
+Second I select the spaces between small and large breakpoints
+
+<RegularImage src="/imgs/posts/zero-media-query/space-scale.png" alt="space-scale-image" />
+
+after I choose the values I but them together in stitches config file.
+
+Here is sample from my config
+
+```js
+import * as Stitches from '@stitches/react'
+
+export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText } =
+  Stitches.createStitches({
+    theme: {
+      space: {
+        auto: 'auto',
+        0: '0',
+        1: 'clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem)',
+        2: 'clamp(0.50rem, calc(0.45rem + 0.24vw), 0.63rem)',
+        3: 'clamp(0.75rem, calc(0.68rem + 0.37vw), 0.94rem)',
+        4: 'clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem)',
+        5: 'clamp(1.50rem, calc(1.35rem + 0.73vw), 1.88rem)',
+        6: 'clamp(2.00rem, calc(1.80rem + 0.98vw), 2.50rem)',
+        7: 'clamp(3.00rem, calc(2.71rem + 1.46vw), 3.75rem)',
+        8: 'clamp(4.00rem, calc(3.61rem + 1.95vw), 5.00rem)',
+        9: 'clamp(6.00rem, calc(5.41rem + 2.93vw), 7.50rem)',
+      },
+      fontSizes: {
+        0: 'clamp(0.69rem, calc(0.65rem + 0.21vw), 0.80rem)',
+        1: 'clamp(0.83rem, calc(0.77rem + 0.33vw), 1.00rem)',
+        2: 'clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem)',
+        3: 'clamp(1.20rem, calc(1.06rem + 0.71vw), 1.56rem)',
+        4: 'clamp(1.44rem, calc(1.24rem + 1.00vw), 1.95rem)',
+        5: 'clamp(1.73rem, calc(1.45rem + 1.39vw), 2.44rem)',
+      },
+    },
+  })
+```
+
+This is what I did maybe I'm wrong or I miss something. So I would advice you to follow && [<ColorfulSpan text="Kevin" color="$crimson5" />](https://www.youtube.com/watch?v=VsNAuGkCpQU), [<ColorfulSpan text="Pedro" color="$green5" />](https://www.youtube.com/watch?v=Gw28VgyKGkw)
+tutorials.

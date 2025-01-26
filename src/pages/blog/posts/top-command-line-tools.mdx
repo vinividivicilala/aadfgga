@@ -1,0 +1,103 @@
+---
+title: 'Top command line tools'
+date: June 8, 2022
+author: 'Beshoi Emad'
+excerpt: 'Top command line tools'
+img: 'top-command-line-tools/coffee.jpg'
+tag: 'tools'
+---
+
+import { Meta, ColorfulSpan, CoverImage, RegularImage } from 'components'
+import Link from 'next/link'
+
+<Meta title="Command Line - Beshoi Emad" description="Top command line tools" />
+
+# Top command line tools
+
+<CoverImage src="/imgs/posts/top-command-line-tools/coffee.jpg" alt="bash-image" />
+
+## 1- Github-cli instead of main website
+
+[Installation instructions](https://github.com/cli/cli#installation)
+
+```bash
+gh repo create
+```
+
+[All available commands](https://cli.github.com/manual/gh)
+
+## 2- Vite
+
+Vite is pretty fast it's build on top of esbuild, after using vite it's hard to go back again specially in development mode if you want quickly to test something instead of waiting minutes for downloading packages and compiling the code vite can do it in seconds
+
+Just run
+
+```bash
+yarn create vite
+```
+
+And even more quickly, you can choose the template directly instead of choosing it in prompt, for example
+
+```bash
+yarn create vite --template react-ts project-name
+```
+
+## 3- Squoosh-Cli
+
+Compress, convert images, try new images format like avif with one of the best cli tools
+
+```bash
+squoosh-cli --avif '{quality:50}' -d ./out ./images/*
+# squoosh-cli --format --quality --output-directory --input-direcrocty
+```
+
+[All available commands](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) / [Test it online](https://squoosh.app/)
+
+## 4- Package manager for windows!
+
+If you use mac or Linux you're familiar with Package managers. Package managers are great because you able to install/uninstall/update from command line, install specific version if you are facing problem or you want to test something and the more important that you can update all software to get latest software features and security patches at once.
+
+Install choco:
+Run PowerShell as system administrator
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+Close and reopen PowerShell as administrator, type choco install/uninstall/upgrade 'package name'
+
+```powershell
+choco install <Package name>
+```
+
+update all packages at same time in one line command
+
+```powershell
+choco upgrade all -y
+```
+
+vola!, all your apps updated at once without need to check every one in setting searching for update button
+
+for more details I have a detailed post <Link href="/blog/posts/package-manger-for-windows">package manger for windows</Link> or visit [main website]('https://chocolatey.org/')
+
+## 5- Weather
+
+Get whether state from your terminal, for more details checkout [github repo](https://github.com/chubin/wttr.in)
+
+```bash
+curl wttr.in/{city1,city2}?format="%l:%t+%w\n"
+```
+
+## 6- Change wallpaper
+
+Get an new cool wallpaper from unsplash in your terminal using splash-cli
+
+```bash
+npm install -g splash-cli
+```
+
+This is a minimal package without any parameters just type splash
+
+```bash
+splash
+```

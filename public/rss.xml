@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Feed Title</title>
+        <link>http://beshoi.dev</link>
+        <description>This is my personal feed!</description>
+        <lastBuildDate>Tue, 24 Jan 2023 20:27:13 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>awesome</generator>
+        <language>en</language>
+        <image>
+            <title>Feed Title</title>
+            <url>https://beshoi.dev/imgs/Beshoi.jpg</url>
+            <link>http://beshoi.dev</link>
+        </image>
+        <copyright>All rights reserved 2022, Beshoi Emad</copyright>
+        <item>
+            <title><![CDATA[Command line tips]]></title>
+            <link>https://beshoi.dev/blog/command-line-tips</link>
+            <guid>https://beshoi.dev/blog/command-line-tips</guid>
+            <pubDate>Mon, 13 Jun 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[Command line tips]]></description>
+            <author>beshoiemad16@gmail.com (Beshoi Emad)</author>
+        </item>
+        <item>
+            <title><![CDATA[Package manger for windows]]></title>
+            <link>https://beshoi.dev/tools/package-manger-for-windows</link>
+            <guid>https://beshoi.dev/tools/package-manger-for-windows</guid>
+            <pubDate>Sat, 11 Jun 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[Package managers are great because you able to install/uninstall/update from command line.]]></description>
+            <author>beshoiemad16@gmail.com (Beshoi Emad)</author>
+        </item>
+        <item>
+            <title><![CDATA[Top command line tools]]></title>
+            <link>https://beshoi.dev/tools/top-command-line-tools</link>
+            <guid>https://beshoi.dev/tools/top-command-line-tools</guid>
+            <pubDate>Tue, 07 Jun 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[Top command line tools]]></description>
+            <author>beshoiemad16@gmail.com (Beshoi Emad)</author>
+        </item>
+        <item>
+            <title><![CDATA[Create a website with zero media query]]></title>
+            <link>https://beshoi.dev/blog/zero-media-query</link>
+            <guid>https://beshoi.dev/blog/zero-media-query</guid>
+            <pubDate>Mon, 06 Jun 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[How I created my website with zero media query using utopia && stitches]]></description>
+            <author>beshoiemad16@gmail.com (Beshoi Emad)</author>
+        </item>
+    </channel>
+</rss>
